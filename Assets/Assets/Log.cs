@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Log : MonoBehaviour
+public class Log : MonoBehaviour, ICuttable
 {
     public GameObject shorterLogPrefab;
 

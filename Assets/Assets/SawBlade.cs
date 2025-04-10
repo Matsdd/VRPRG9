@@ -20,18 +20,13 @@ public class SawBlade : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Log triggered");
-        
         if (!_isSpinning) return;
 
-        Debug.Log("Log triggered and spinning");
-        
-        var log = other.GetComponent<Log>();
-        
-        if (log != null)
+        var cuttable = other.GetComponent<ICuttable>();
+        if (cuttable != null)
         {
-            Debug.Log("CUT!!!!");
-            log.CutLog(other.GetComponent<GameObject>()); // Call the CutLog method from the Log script
+            cuttable.CutLog(other.gameObject);
         }
     }
+
 }
